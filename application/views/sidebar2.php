@@ -15,6 +15,12 @@
             </li>
             <li>
                 <a href="#">
+                    <i class="icon-book"></i>
+                    <span class="title">Buku Database</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <i class="icon-folder"></i>
                     <span class="title">File</span>
                 </a>

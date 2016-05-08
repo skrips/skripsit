@@ -81,8 +81,8 @@
                                     <label class="col-md-2 control-label">Akses</label>
                                     <div class="col-md-10">
                                         <div class="radio-list">
-                                            <label class="radio-inline"><input type="radio" name="akses" id="akses1" value="Private" checked> Private</label>
-                                            <label class="radio-inline"><input type="radio" name="akses" id="akses2" value="Public"> Public </label>
+                                            <label class="radio-inline"><input type="radio" name="akses" id="akses1" value="Private" checked>Internal</label>
+                                            <label class="radio-inline"><input type="radio" name="akses" id="akses2" value="Public">External</label>
                                         </div>
 
                                     </div>
