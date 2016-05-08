@@ -15,7 +15,7 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="icon-book"></i>
+                    <i class="icon-notebook"></i>
                     <span class="title">Buku Database</span>
                 </a>
             </li>
