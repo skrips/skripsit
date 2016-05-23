@@ -92,6 +92,85 @@ Class Mtl extends CI_Model {
             return FALSE;
         }
     }
+    
+    function add_user() {
+        $add_user = array(
+            'username' => $this->input->post('username'),
+            'nm_user' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+            'jenkel' => $this->input->post('jenkel'),
+            'privillege' => $this->input->post('privillege'),
+            'jabatan' => $this->input->post('jabatan'),
+            'passw_user' => md5($this->input->post('pass')),
+            'foto' => $_FILES['foto']['name']
+        );
+        $insert = $this->db->insert('user', $add_user);
+
+        if ($insert) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    
+    function update_user() {
+        $username = $this->input->post('username');
+        if ($this->input->post('pass') != "") {
+            if ($_FILES['foto']['name'] != "") {
+                $upd_user = array(
+                    'nm_user' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'jenkel' => $this->input->post('jenkel'),
+                    'privillege' => $this->input->post('privillege'),
+                    'jabatan' => $this->input->post('jabatan'),
+                    'passw_user' => md5($this->input->post('pass')),
+                    'foto' => $_FILES['foto']['name']
+                );
+            } else {
+                $upd_user = array(
+                    'nm_user' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'jenkel' => $this->input->post('jenkel'),
+                    'privillege' => $this->input->post('privillege'),
+                    'jabatan' => $this->input->post('jabatan'),
+                    'passw_user' => md5($this->input->post('pass'))
+                );
+            }
+        } else {
+            if ($_FILES['foto']['name'] != "") {
+                $upd_user = array(
+                    'nm_user' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'jenkel' => $this->input->post('jenkel'),
+                    'privillege' => $this->input->post('privillege'),
+                    'jabatan' => $this->input->post('jabatan'),
+                    'foto' => $_FILES['foto']['name']
+                );
+            } else {
+                $upd_user = array(
+                    'nm_user' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'jenkel' => $this->input->post('jenkel'),
+                    'privillege' => $this->input->post('privillege'),
+                    'jabatan' => $this->input->post('jabatan')
+                );
+            }
+        }
+        $this->db->where('username', $username);
+        $update = $this->db->update('user', $upd_user);
+
+        if ($update) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    function get_user() {
+        $this->db->where('username !=', "siliwanti");
+        $this->db->order_by('id_user');
+        return $this->db->get('user')->result();
+    }
 
 }
 

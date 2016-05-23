@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url()."Ctl/Artikel";?>">
                     <i class="icon-pencil"></i>
                     <span class="title">Artikel</span>
                 </a>

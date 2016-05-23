@@ -45,4 +45,11 @@
         ComponentsEditors.init();
     });
 </script>
+<script src="<?php echo base_url()."assets/datatables/"; ?>jquery.dataTables.js"></script>
+<script src="<?php echo base_url()."assets/datatables/"; ?>dataTables.bootstrap.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                $("#mytables").dataTable();
+            });
+</script>
 <!-- END JAVASCRIPTS -->

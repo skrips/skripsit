@@ -89,8 +89,8 @@
                                             </div>
                                         <?php } else { ?>
                                             <div class="radio-list">
-                                                <label class="radio-inline"><input type="radio" name="akses" id="akses1" value="Private"> Private</label>
-                                                <label class="radio-inline"><input type="radio" name="akses" id="akses2" value="Public" checked> Public </label>
+                                                <label class="radio-inline"><input type="radio" name="akses" id="akses1" value="internal">Internal</label>
+                                                <label class="radio-inline"><input type="radio" name="akses" id="akses2" value="external" checked>External </label>
                                             </div>
                                         <?php }; ?>
                                     </div>
